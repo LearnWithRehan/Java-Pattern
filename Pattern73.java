@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
-public class Pattern72 {
+public class Pattern73 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter num of rows:- ");
+        System.out.println("Enter num of rows:- ");
         int rows = sc.nextInt();
-        for (int i = 1; i <= rows; i++) {
-            // spaces
-            for (int j = 1; j <= rows - i; j++) {
+        char ch = 'A';
+        for (int i = 1; i<=rows; i++){
+            //spaces
+            for (int j = 1; j<=rows-i; j++){
                 System.out.print(" ");
             }
-            // characters (A-Z loop)
-            for (int j = 1; j <= i; j++) {
-                char ch = (char) ('A' + (j - 1) % 26);
+            for (int j=1; j<=i; j++){
                 System.out.print(ch + " ");
+                ch--;
             }
+            ch = (char) ((int)'A' + i);
             System.out.println();
         }
         sc.close();
